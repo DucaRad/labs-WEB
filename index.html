@@ -1,0 +1,161 @@
+<html>
+<head>
+<title>ZODIAC</title>
+<meta  charset=utf-8>
+<script  type="text/javascript">
+
+function Access()
+{
+	alert("Bine ați venit: Duca ");
+}
+
+function exit()
+{
+	alert("See ya: Duca Radu");
+}
+
+function change_zodia_input(s)
+{
+		document.getElementById("zodiac").innerHTML = s;
+}
+
+function valideaza()
+{
+	var ziua = document.getElementById("ziua").value;
+	var luna = document.getElementById("luna").value;
+	
+	ziua = parseInt(ziua,10);
+	luna = parseInt(luna,10);
+	
+	if( isNaN(ziua) || isNaN(luna))
+	{
+			alert("unul din numere este null")
+			return;
+	}
+	if(ziua > 31 || luna > 12 || luna < 1 || ziua < 1 )
+	{
+	alert("Introduceți date valide");
+	}
+	else if((luna == 1 && ziua  > 20) || (luna == 2 && ziua < 18))
+	{
+		
+		change_zodia_input("Varsător");
+	}    
+	else if((luna == 2 && ziua > 19) || (luna == 3 && ziua < 20))
+	{
+		if(luna == 2 && ziua > 29)
+		{
+			alert("februarie are doar 29 zile");
+		}
+		else change_zodia_input("Pești");
+	}
+	else if((luna == 3 && ziua > 21) || (luna == 4 && ziua < 20))
+	{
+		change_zodia_input("Berbec");
+	}
+	
+	else if((luna == 4 && ziua > 21) || (luna == 5 && ziua < 20))
+	{
+		
+		if(luna == 4 && ziua > 30)
+		{
+			alert("Aprilie are doar 30 de zile");
+		}
+		else change_zodia_input("Taur");
+	}
+	
+	else if((luna == 5 && ziua > 21) || (luna == 6 && ziua < 21))
+	{
+		change_zodia_input("Gemeni");	
+	}
+	
+	else if((luna == 6 && ziua > 22) || (luna == 7 && ziua < 22))
+	{
+		if(luna == 6 && ziua > 30)
+		{
+			alert("Iunie are doar 30 de zile");
+		}
+		else change_zodia_input("Rac");
+	}
+	
+	else if((luna == 7 && ziua > 23) || (luna == 8 && ziua < 22))
+	{
+		change_zodia_input("Leu");
+	}
+	
+	else if((luna == 8 &&  ziua > 23) || (luna == 9 && ziua < 22))
+	{
+		
+		change_zodia_input("Fecioară");
+	}
+	
+	else if((luna == 9 && ziua > 23) || (luna == 10 && ziua < 22))
+	{
+		if(luna == 9 && ziua > 30)
+		{
+			alert("Septembrie are doar 30 de zile");
+		}
+		else change_zodia_input("Balanță");
+	}
+	
+	else if((luna == 10 && ziua > 23) || (luna == 11 && ziua < 21))
+	{
+		change_zodia_input("Scorpion");
+	}
+	
+	else if((luna == 11 && ziua > 22) || (luna == 12 && ziua < 20))
+	{
+		if(luna == 11 && ziua > 30)
+		{
+			alert("Noiembrie are doar 30 de zile");
+		}
+		else change_zodia_input("Săgetător");
+	}
+	
+	else if((luna == 12 && ziua > 21) || (luna == 1 && ziua < 19))
+	{
+		change_zodia_input("Capricorn");
+	}
+}
+
+</script>
+</head>
+<BODY onLoad="Access()" onUnload="exit()" bgcolor="#d5e8dc" align="center">
+
+
+ <fieldset>
+    <legend><h1>Determina zodia aici:</h1></legend>
+	<table align="center">
+		<tr>
+			<td> Luna:</td>
+			<td><input type="text" id="luna" ></td>
+		</tr>
+		
+		<tr>
+			<td> Ziua:</td>
+			<td><input type="text" id="ziua" ></td>
+		</tr>
+		
+		<tr>
+			<td><input type="button" value="Determina zodia" onclick="valideaza()"> </td>
+			
+		</tr>
+		
+		<tr>
+			<td> Zodia:</td>
+			<td>      <p id="zodiac">   </p>  </td>
+		</tr>
+		
+		
+	
+	
+	
+	
+	
+
+  </fieldset>
+
+</BODY>
+
+
+</html>

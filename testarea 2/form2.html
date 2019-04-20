@@ -1,0 +1,142 @@
+<head>
+<title>Testarea 2 </title>
+<meta  charset=utf-8>
+<script>
+
+function reset() {
+  document.getElementById("myForm").reset();
+}
+
+</script>
+</head>
+<body align="center" bgcolor="#00ff99" > 
+<td>
+
+ <fieldset>
+    <legend><h1>Formular</h1></legend>
+
+<form method="post" action="connect2.php">
+
+	<table align="center">
+		<tr>
+			<td><b>Nume Vanzator:</td>
+			<td colspan="2"><input type="text" id="myText" name="nume" value=""></td>
+		</tr>
+		
+		<tr>
+			<td><b> Telefon Vanzator	:</td>
+			<td colspan="2"><input type="text" id="myText1" name="telefon" value=""></td>
+		</tr>
+		
+		<tr>
+			<td><b> Nr de camere apartament:</td>
+			<td colspan="2"><input type="text" id="myText2" name="camere" value=""></td>
+		</tr>
+		
+		
+		<tr>
+			<td><b> Etajul	:</td>
+			<td colspan="2"> <input type="tel" id="myText4" name="etajul" ></td>
+		</tr> 
+		
+		<tr>
+			<td><b> Descriere 	:</td>
+			<td colspan="2"> <input type="tel" id="myText5" name="description" ></td>
+		</tr>
+
+		<tr>
+			<td><b> Pret 	:</td>
+			<td colspan="2"> <input type="tel" id="myText5" name="pprice" ></td>
+		</tr>
+		
+	
+		
+		<tr>
+			<td><b> Data			:</td>
+			<td colspan="2"><input type="date"  id="myText5" name="ddata" value=""><br></td>
+		</tr> 
+		
+		
+			
+		<tr>
+			<td>  <input type="button" value="CLEAR" onclick="reset() ">
+			<td><input type="submit" value="Submit"> </td>
+			<td></td>
+		</tr>	
+		
+		
+
+	</table>
+</form>	
+
+
+</fieldset>
+
+<fieldset>
+    <legend><h1>Interogari</h1></legend>
+		<table align="center">
+		<tr>
+			<td>	<form method="post" action="afisare.php">
+						<input type="submit" value="Afisare">
+					</form>
+			</td>		
+		</tr>
+		
+		<tr>
+			<td>	<form method="post" action="int_2camere.php">
+						<input type="submit" value="2 camere">
+					</form>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>	<form method="post" action="int_3camere_etaj1.php">
+						<input type="submit" value="3 camere - etajul 1">
+					</form>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>	<form method="post" action="int_gresie.php">
+						<input type="submit" value="gresie - pret < 20000 ">
+					</form>
+			</td>
+		</tr>
+		
+		
+	
+		</table>
+</fieldset>
+		
+		
+<fieldset>
+    <legend><h1>Stergere</h1></legend>
+		<table align="center">
+		<tr>
+			<td>	<form method="post" action="telefon_null.php">
+						<input type="submit" value="Sterge numar-null">
+					</form>
+			</td>		
+		</tr>
+		
+			
+		</table>
+</fieldset>
+
+<fieldset>
+    <legend><h1>Stergere Conform data indicata</h1></legend>
+		<table align="center">
+		<tr>
+			<form method="post" action="dateparameter.php">
+					<td>	<b> Data			:</td>
+					<td>	<input type="date"  id="myText10" name="deldata" value=""></td>
+					<td>	<input type="submit" value="Delete record"> </td>
+					<td>  <input type="button" value="CLEAR" onclick="reset() ">
+					
+			</form>
+		</tr> 
+		</table>			
+ 
+</td>
+
+</body>

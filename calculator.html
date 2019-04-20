@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>Calculator</title>
+<meta  charset=utf-8>
+<script  type="text/javascript">
+
+ function close_window() {
+  if (confirm("Close Window?")) {
+    close();
+  }
+}
+
+ function reset() {
+  document.getElementById("myForm").reset();
+}
+
+function display(s)
+{	
+	console.log(s);
+		document.getElementById("rezultat").innerHTML = s;
+}
+
+function execute_operation(operation)
+{   
+	
+	a = document.getElementById("1").value;
+	b = document.getElementById("2").value;
+	console.log(a, b);
+	
+	a = parseInt(a, 10);
+	b = parseInt(b, 10);
+	
+	if( isNaN(a) || isNaN(b))
+	{
+			alert("unul din numere este null")
+			return;
+	}
+		
+	if (operation == '+')
+	{  
+		
+		display(a+b);
+	}
+	
+	else if (operation == '-')
+	{  
+		
+		
+		display(a-b);
+	}
+	else if (operation == '*')
+	{  
+		
+		
+		display(a*b);
+	}
+	else if (operation == '/')
+	{  
+		
+		
+		display(a/b);
+	}
+	else if (operation == '^')
+	{  
+		
+		
+		
+		display(Math.pow(a, b));
+	}
+
+}
+</script>
+</head>
+<BODY bgcolor="#d5e8dc" align ="center">
+
+<form id="myForm">
+ <fieldset>
+    <legend><h1>Calculator:</h1></legend>
+	<table align="center">
+		<tr>
+			<td> nr 1:</td>
+			<td>  <input type="text" id="1" /></td>
+		</tr>	
+		
+		<tr>
+			<td> nr 2 :</td>
+			<td> <input type="text" id="2" /></td>
+		</tr>
+		
+		<tr>
+			<td>Rezultat: </td>
+			<td><p id="rezultat">   </p> </td>
+		</tr>
+	</table>
+	
+	
+	<input type="button" value="+" onclick=" execute_operation('+')">
+	<input type="button" value="-" onclick=" execute_operation('-')">
+	<input type="button" value="*" onclick=" execute_operation('*')">
+	<input type="button" value="/" onclick=" execute_operation('/')">
+	<input type="button" value="^" onclick=" execute_operation('^')"><br><br>
+	<input type="button" value="CLEAR" onclick="reset() ">
+	<input type="button" value="EXIT" onclick="close_window() ">
+
+  </fieldset>
+</form>
+  
+</BODY>
+
+
+</html>
