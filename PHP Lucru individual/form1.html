@@ -1,0 +1,62 @@
+<td>
+<script>
+
+function reset() {
+  document.getElementById("myForm").reset();
+}
+
+function close_window() {
+  if (confirm("Close Window?")) {
+    close();
+  }
+}
+
+</script>
+
+
+<form method="post" action="connect1.php">
+ <fieldset>
+    <legend><h1>Formular</h1></legend>
+	<table align="center">
+		<tr>
+			<td>First name:</td>
+			<td colspan="2"><input type="text" id="myText" name="nume" value=""></td>
+		</tr>
+		
+		<tr>
+			<td> Last name	:</td>
+			<td colspan="2"><input type="text" id="myText1" name="prenume" value=""></td>
+		</tr>
+		
+		<tr>
+			<td>Adress:</td>
+			<td colspan="2"><input type="text" id="myText2" name="adresa" value=""></td>
+		</tr>
+		
+		
+		<tr>
+			<td> Phone Number	:</td>
+			<td colspan="2"> <input type="tel" id="myText4" name="telefon"" ></td>
+		</tr> 
+		
+		<tr>
+			<td> Email			:</td>
+			<td colspan="2"><input type="text" id="myText5" name="email" value=""><br></td>
+		</tr> 
+		
+		
+			
+		<tr>
+			<td><input type="button" value="CLEAR" onclick="reset() "></td>
+			<td><input type="submit" value="Submit"> </td>
+			<td> <input type="button" value="EXIT" onclick="close_window() "></td>
+		</tr>	
+		
+		
+	
+	
+	
+
+	</table>
+ 
+</td>

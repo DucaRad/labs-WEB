@@ -1,0 +1,133 @@
+﻿<html>
+<head>
+<title>Lab JS   </title>
+<meta  charset=utf-8>
+<script  type="text/javascript">
+
+function myFunction() {
+    var eroare=["@","#","$","^","%","*"];
+    var nume =document.getElementById("myText").value;
+	if((nume.length<=3)||((/[\d]/.test(document.getElementById("myText").value)))){
+	  alert("Nume invalid");
+	  return false;
+	}	
+	
+	var prenume =document.getElementById("myText1").value;
+	if((prenume.length<=3)||((/[\d]/.test(document.getElementById("myText1").value)))){
+	  alert("Prenume invalid");
+	  return false;
+	}
+	
+	var adresa =document.getElementById("myText2").value;
+	var eroare=/[@#$^%]/;
+	var adress=/[0-9]/;
+	if(((adresa.length<=3)||(eroare.test(adresa)))){
+	  alert("Adresa invalida");
+	  return false;
+	}
+	else if(!adress.test(adresa)){
+	alert("Adresa trebuie sa contina cel putin o cifra ");
+	return false;
+	}
+	
+	
+	var nastere =document.getElementById("myText3").value;
+	if(!nastere){
+	alert("Setati Data");
+	return false;
+	}
+	var tel=/^\d{3}\-\d{9}$/;
+	var telefon =document.getElementById("myText4").value;
+	if(!tel.test(telefon)){
+	alert ("Telefonul introdus este invalid \n Format: NNN-NNNNNNNNN");
+	return false;
+	}
+	var mail=/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var email =document.getElementById("myText5").value;
+	if(!mail.test(email)){
+	alert ("Mail introdus este invalid \n Format:XXX@XXX.com/ru");
+	return false;
+	}
+	
+	var culoare =document.getElementById("myText6").value;
+
+ document.write("Nume:"+ nume +
+                "</br>Prenume:" + prenume +
+				"</br>Adresa:" + adresa +
+				"</br>Data nasterii:" + nastere +
+				"</br>Telefon:" + telefon +
+				"</br>Email:" + email +
+				"</br>Culoare favorita:" + "<input type=\"color\" id=\"myColor\">");
+}
+function reset() {
+  document.getElementById("myForm").reset();
+}
+
+function close_window() {
+  if (confirm("Close Window?")) {
+    close();
+  }
+}
+
+function Access()
+{
+	alert("Bine ați venit: Duca ");
+}
+  
+</script>
+
+
+</head>
+
+<body onLoad="Access()" onUnload="exit()" bgcolor="#d5e8dc" align="center">
+<form id="myForm">
+ <fieldset>
+    <legend><h1>Formular</h1></legend>
+	<table align="center">
+		<tr>
+			<td>First name:</td>
+			<td colspan="2"><input 	type="text" id="myText" name="nume" value=""></td>
+		</tr>
+		
+		<tr>
+			<td> Last name	:</td>
+			<td colspan="2"> <input type="text" id="myText1" name="prenume" value=""></td>
+		</tr>
+		
+		<tr>
+			<td>Adress:</td>
+			<td colspan="2"><input	type="text" id="myText2" name="adresa" value=""></td>
+		</tr>
+		
+		<tr>
+			<td> Date of Birth	:</td>
+			<td colspan="2" ><input type="date" id="myText3" name="nastere" value=""></td>
+		</tr> 
+		
+		<tr>
+			<td> Phone Number	:</td>
+			<td colspan="2"> <input	 type="tel" id="myText4" name="telefon" required pattern="[0-9]{3}-[0-9]{4}" ></td>
+		</tr> 
+		
+		<tr>
+			<td> Email			:</td>
+			<td colspan="2"><input	 type="text" id="myText5" name="email" value=""><br></td>
+		</tr> 
+		
+		<tr>
+			<td>Favorite Color:</td>
+			<td colspan="2"><input type="color" id="myText6" name="culoare" value=""></td>
+		</tr>
+			
+		<tr>
+			<td><input type="button" value="CLEAR" onclick="reset() "></td>
+			<td><button onclick="myFunction()">Submit</button> </td>
+			<td>		<input type="button" value="EXIT" onclick="close_window() "></td>
+		</tr>	
+	
+	</table>
+
+
+
+</body>
+</html>
